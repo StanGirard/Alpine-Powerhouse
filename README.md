@@ -1,4 +1,4 @@
-# Serverless #
+# Alpine Powerhouse #
 
 [![Build Status](https://gitlab.com/StanGirard/alpine-powerhouse/badges/main/pipeline.svg)](https://gitlab.com/StanGirard/alpine-powerhouse/)
 
