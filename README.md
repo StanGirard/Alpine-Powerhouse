@@ -1,6 +1,6 @@
 # Alpine Powerhouse #
 
-[![Build Status](https://gitlab.com/StanGirard/alpine-powerhouse/badges/main/pipeline.svg)](https://gitlab.com/StanGirard/alpine-powerhouse/)
+<!-- [![Build Status](https://gitlab.com/StanGirard/alpine-powerhouse/badges/main/pipeline.svg)](https://gitlab.com/StanGirard/alpine-powerhouse/) -->
 
 A [docker image](https://hub.docker.com/r/stangirard/alpine-powerhouse) for running alpine with already built in tools such as curl & dig
 
