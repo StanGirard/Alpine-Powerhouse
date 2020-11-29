@@ -1,0 +1,22 @@
+image: docker:latest
+
+stages:
+  - version
+  - deploy
+  
+deploy:
+  stage: deploy
+  services:
+    - name: docker:dind
+  before_script:
+    - export RELEASE=`cat VERSION`
+    - docker build --build-arg RELEASE="$RELEASE" -t stangirard/alpine-powerhouse .
+    - docker tag stangirard/alpine-powerhouse:latest stangirard/alpine-powerhouse:"$RELEASE"
+  script:
+    - echo "$DOCKER_PASS" | docker login --username "$DOCKER_USER" --password-stdin
+    - docker push stangirard/alpine-powerhouse:latest;
+    - docker push stangirard/alpine-powerhouse:"$RELEASE";
+  only:
+    - VERSION
+  except:
+    - schedules
