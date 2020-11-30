@@ -12,7 +12,7 @@ The `VERSION` file contains the [alpine release](https://hub.docker.com/_/alpine
 
 ```
 $ docker pull stangirard/alpine-powerhouse
-$ docker run --rm stangirard/serverless curl https://primates.dev
+$ docker run --rm stangirard/alpine-powerhouse curl https://primates.dev
 ```
 
 ## Base image ##
