@@ -2,9 +2,9 @@
 
 <!-- [![Build Status](https://gitlab.com/StanGirard/alpine-powerhouse/badges/main/pipeline.svg)](https://gitlab.com/StanGirard/alpine-powerhouse/) -->
 
-A [docker image](https://hub.docker.com/r/stangirard/alpine-powerhouse) for running alpine with already built in tools such as curl & dig
+A [docker image](https://hub.docker.com/r/stangirard/alpine-powerhouse) for running alpine with already built in tools such as curl, dig, git, psql, jq
 
-This can be useful for debugging purposes.
+This can be useful for debugging or CI purposes
 
 The `VERSION` file contains the [alpine release](https://hub.docker.com/_/alpine) to be used as base.
 
@@ -23,6 +23,9 @@ Included packages from base image:
 
 - Curl
 - DNS Lookup utility
+- jq
+- psql-client
+- git
 
 ## Check the installed tools
 
@@ -30,10 +33,10 @@ Included packages from base image:
 docker run -it --rm --entrypoint="./startup.sh" stangirard/alpine-powerhouse
 
 =================================================
-curl 7.69.1 (x86_64-alpine-linux-musl) libcurl/7.69.1 OpenSSL/1.1.1g zlib/1.2.11 nghttp2/1.41.0
-Release-Date: 2020-03-11
-Protocols: dict file ftp ftps gopher http https imap imaps pop3 pop3s rtsp smb smbs smtp smtps telnet tftp 
-Features: AsynchDNS HTTP2 HTTPS-proxy IPv6 Largefile libz NTLM NTLM_WB SSL TLS-SRP UnixSockets
+curl 7.69.1
 DiG 9.16.6
+jq-master-v20200428-28-g864c859e9d
+psql (PostgreSQL) 12.5
+git version 2.26.2
 =================================================
 ```
