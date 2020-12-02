@@ -5,4 +5,5 @@ dig -v
 jq --version
 psql --version
 git --version
+ssh -V
 echo "================================================="

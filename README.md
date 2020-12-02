@@ -2,7 +2,7 @@
 
 <!-- [![Build Status](https://gitlab.com/StanGirard/alpine-powerhouse/badges/main/pipeline.svg)](https://gitlab.com/StanGirard/alpine-powerhouse/) -->
 
-A [docker image](https://hub.docker.com/r/stangirard/alpine-powerhouse) for running alpine with already built in tools such as curl, dig, git, psql, jq
+A [docker image](https://hub.docker.com/r/stangirard/alpine-powerhouse) for running alpine with already built in tools such as curl, dig, git, psql, jq, ssh
 
 This can be useful for debugging or CI purposes
 
@@ -26,6 +26,7 @@ Included packages from base image:
 - jq
 - psql-client
 - git
+- ssh
 
 ## Check the installed tools
 
@@ -38,5 +39,6 @@ DiG 9.16.6
 jq-master-v20200428-28-g864c859e9d
 psql (PostgreSQL) 12.5
 git version 2.26.2
+OpenSSH_8.3p1, OpenSSL 1.1.1g  21 Apr 2020
 =================================================
 ```
