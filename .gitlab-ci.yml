@@ -17,8 +17,7 @@ deploy:
     - docker push stangirard/alpine-powerhouse:latest;
     - docker push stangirard/alpine-powerhouse:"$RELEASE";
   only:
-    changes:
-      - VERSION
+    - tags
   except:
     - schedules
 
