@@ -39,12 +39,10 @@ for j in ${IMAGE_TAGS}; do
         vercomp $RELEASE $j
         if [[ $? -eq 2 ]]; then
             printf $j >VERSION
-            echo $j
+            NEW_VERSION=$(cat VERSION)
+            git add VERSION
+            git commit -m "VERSION=${NEW_VERSION}"
+            git tag -a "v${NEW_VERSION}" -m "New Alpine Version"
         fi
     fi
 done
-
-NEW_VERSION=$(cat VERSION)
-git add VERSION
-git commit -m "VERSION=${NEW_VERSION}"
-git tag -a "v${NEW_VERSION}" -m "New Alpine Version"
