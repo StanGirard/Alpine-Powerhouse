@@ -31,7 +31,8 @@ TOKEN=$(curl -s -H "Content-Type: application/json" -X POST -d '{"username": "'$
 
 # build a list of all images & tags
 # get tags for repo
-IMAGE_TAGS=$(curl -s -H "Authorization: JWT ${TOKEN}" https://registry.hub.docker.com/v2/repositories/library/alpine/tags/?page_size=100 | jq -r '.results|.[]|.name' | sort -s -t- -k 2,2nr | sort -t. -s -k 1,1nr -k 2,2nr -k 3,3nr -k 4,4nr | cut -d " " -f 1)
+IMAGE_TAGS=$(curl -s -H "Authorization: JWT ${TOKEN}" https://registry.hub.docker.com/v2/repositories/library/alpine/tags/?page_size=200 | jq -r '.results|.[]|.name' | sort -s -t- -k 2,2nr | sort -t. -s -k 1,1nr -k 2,2nr -k 3,3nr -k 4,4nr | cut -d " " -f 1)
+echo $IMAGE_TAGS
 # build a list of images from tags
 for j in ${IMAGE_TAGS}; do
     if [[ $j == *"."* ]]; then

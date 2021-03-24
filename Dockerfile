@@ -6,7 +6,7 @@ ARG KUBECTL_VERSION=1.20.0
 LABEL maintainer="StanGirard <stan@primates.dev>"
 
 ## Install 
-RUN apk --no-cache add curl bind-tools jq postgresql-client git openssh bash
+RUN apk --no-cache add curl bind-tools jq postgresql-client git openssh bash bash-completion
 
 RUN apk add --update --no-cache curl && \
     curl -LO https://storage.googleapis.com/kubernetes-release/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl && \
