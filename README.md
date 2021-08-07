@@ -13,6 +13,7 @@ The `VERSION` file contains the [alpine release](https://hub.docker.com/_/alpine
 ```
 $ docker pull stangirard/alpine-powerhouse
 $ docker run --rm stangirard/alpine-powerhouse curl https://primates.dev
+$ docker run -it stangirard/alpine-powerhouse bash
 ```
 
 ## Base image ##
@@ -35,7 +36,7 @@ Included packages from base image:
 docker run -it --rm --entrypoint="./startup.sh" stangirard/alpine-powerhouse
 
 =================================================
-curl 7.74.0 
+curl 7.74.0
 DiG 9.16.11
 jq-master-v20200917-3811-g2b0a3891bf
 psql (PostgreSQL) 13.1

@@ -5,7 +5,7 @@ ARG KUBECTL_VERSION=1.20.0
 
 LABEL maintainer="StanGirard <stan@primates.dev>"
 
-## Install 
+## Install
 RUN apk --no-cache add curl bind-tools jq postgresql-client git openssh bash bash-completion
 
 RUN apk add --update --no-cache curl && \
@@ -15,5 +15,3 @@ RUN apk add --update --no-cache curl && \
 
 COPY bin/startup.sh .
 RUN "./startup.sh"
-
-

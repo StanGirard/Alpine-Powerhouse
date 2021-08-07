@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e 
+set -e
 export RELEASE=`cat VERSION`
 if [[ -z $RELEASE ]]; then
     echo "Error: undefined RELEASE environment variable."

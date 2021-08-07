@@ -1,9 +1,25 @@
 image: docker:latest
 
 stages:
+  - lint
   - deploy
   - version
-  
+
+.lint:
+  stage: lint
+  image: stangirard/pre-commit-terraform:0.12.29-1
+  variables:
+    PRE_COMMIT_HOME: ${CI_PROJECT_DIR}/.cache/pre-commit
+  cache:
+    paths:
+      - ${PRE_COMMIT_HOME}
+  script:
+    - pre-commit run -a
+
+Precommit Verification:
+  extends:
+    - .lint
+
 deploy:
   stage: deploy
   services:
@@ -20,7 +36,6 @@ deploy:
     - tags
   except:
     - schedules
-
 
 version:on-schedule:
   image: stangirard/alpine-powerhouse:latest
