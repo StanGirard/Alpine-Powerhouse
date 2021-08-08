@@ -19,6 +19,8 @@ stages:
 Precommit Verification:
   extends:
     - .lint
+  except:
+    - schedules
 
 deploy:
   stage: deploy
